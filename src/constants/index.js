@@ -9,3 +9,13 @@ export const CONTACT = {
   phoneNo: "+917902512987",
   email: "manudev1518@gmail.com",
 };
+
+export const PROJECTS = [
+  {
+    name: "School Management",
+    description: "Website for handling School Management.",
+    link: "https://school-b6500m4fd-1518manus-projects.vercel.app/",
+  },
+ 
+];
+

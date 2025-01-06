@@ -8,7 +8,7 @@ const Navbar = () => {
   const links = [
     { id: 1, link: 'home' },
     { id: 2, link: 'about' },
-    { id: 3, link: 'technologies' },
+    { id: 3, link: 'tech', name: 'Tech & Projects' }, 
     { id: 4, link: 'contact' },
   ];
 
@@ -17,22 +17,22 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
-            <a href="#" className="text-2xl font-bold font-signature text-white">
+            <a href="#" className="text-2xl font-bold font-signature ">
               M
             </a>
           </div>
 
           <ul className="hidden md:flex items-center space-x-5">
-            {links.map(({ id, link }) => (
+            {links.map(({ id, link, name }) => (
               <li key={id}>
                 <Link
-                  to={link}
+                  to={link} 
                   smooth
                   duration={500}
-                  className="cursor-pointer capitalize font-medium text-white   hover:text-red-500  transition duration-75"
+                  className="cursor-pointer capitalize font-medium hover:text-red-500 transition-transform duration-75 hover:scale-105"
                   onClick={() => setNav(false)}
                 >
-                  {link}
+                  {name || link} 
                 </Link>
               </li>
             ))}
@@ -47,18 +47,26 @@ const Navbar = () => {
       </div>
 
       {nav && (
-        <div className="md:hidden fixed top-20 left-0 right-0 bottom-0 bg-gradient-to-b from-black to-gray-800 text-gray-500">
-          <ul className="flex flex-col justify-center items-center h-full">
-            {links.map(({ id, link }) => (
+        <div className="fixed top-16 right-0 bg-gradient-to-b from-black to-gray-800 text-gray-500 p-6 rounded-lg shadow-lg z-50">
+          <div className="flex justify-between items-center mb-6">
+            <button
+              onClick={() => setNav(false)}
+              className="text-white text-2xl"
+            >
+              &times;
+            </button>
+          </div>
+          <ul className="flex flex-col items-start space-y-4">
+            {links.map(({ id, link, name }) => (
               <li key={id}>
                 <Link
                   to={link}
                   smooth
                   duration={500}
-                  className="cursor-pointer capitalize font-medium text-white hover:text-violet-600 transition duration-75"
+                  className="cursor-pointer capitalize font-medium text-white hover:text-violet-600 transition duration-200"
                   onClick={() => setNav(false)}
                 >
-                  {link}
+                  {name || link} 
                 </Link>
               </li>
             ))}
