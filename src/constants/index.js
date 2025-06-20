@@ -16,6 +16,11 @@ export const PROJECTS = [
     description: "Website for handling School Management.",
     link: "https://school-b6500m4fd-1518manus-projects.vercel.app/",
   },
+  {
+    name: "Activity Points Management",
+    description: "This efficiently track, validate, and manage student participation in co-curricular and non-co-curricular activities, automate activity point assignment, and provide analysis and reports for advisors and administrators.",
+    link: "https://activity-points.vercel.app/", 
+  }
  
 ];
 
